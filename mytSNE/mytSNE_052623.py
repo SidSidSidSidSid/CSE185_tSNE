@@ -1,24 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[8]:
 
 
 import numpy as np
 import matplotlib.pyplot as plt
 import math
-def twodto1dtSNE(numpyarr, colors):
-    numData = numpyarr.shape[0]
-    
-    dataLocs = [0]*numData
-    for i in range(len(dataLocs)):
-        dataLocs[i] = np.random.rand()
-        
-    print("On Number Line Random")
-    
-    plt.scatter(dataLocs, [0]*numData, c=colors)
-    plt.show()
-    return(dataLocs)
 
 def twodto2dtSNE(numData, colors):    
     dataLocs = np.zeros((numData,2))
@@ -32,43 +20,8 @@ def twodto2dtSNE(numData, colors):
     plt.show()
     return(dataLocs)
 
-# data = np.array([[1, 1],
-#                  [2, 2],
-#                  [1.5, 1.5],
-#                  [1.5, 2],
-#                [16, 7],
-#                  [17, 6],
-#                  [16.5, 6.5],
-#                  [16.7, 6.25]])
-# colors = np.array(["orange", "orange","orange","orange", "blue", "blue", "blue", "blue"])
 
-data = np.array([[1, 1],
-                 [2, 2],
-                 [1.5, 1.5],
-                 [1.5, 2],
-               [1.5, 8],
-                 [2.5, 7],
-                 [1.5, 7.5],
-                 [2, 7.25],
-               [6, 7],
-                 [7, 6],
-                 [6.5, 6.5],
-                 [6.7, 6.25]])
-
-data 
-
-colors = np.array(["orange", "orange","orange","orange", "blue", "blue","blue","blue","red","red","red","red",])
-
-
-
-
-plt.scatter(data[:,0], data[:,1], c=colors)
-plt.show()
-
-twodto2dtSNE(data.shape[0], colors)
-
-
-# In[2]:
+# In[9]:
 
 
 def computePairwiseDistance(list1, list2):
@@ -94,16 +47,10 @@ def computePairwiseDistances(data):
     for i in range(numSamples):
         for j in range(numSamples):
             toReturn[i,j] = computePairwiseDistance(data[i,:], data[j,:])
-    return toReturn;
-
-#def normalizeConditionalProbabilities()
-    #input a pairwise distance matrix where (i,j) = (row, column) is the euclidian distance of the ith point to the jth point
-    #outputs a matrix where (i,j) is P(j|i) that the ith point would pick the jth point as its neighbor if neighbors were picked
-    #under a Gaussian distribution centered at xi
-    
+    return toReturn;    
 
 
-# In[3]:
+# In[10]:
 
 
 def computePairwiseAffinities(data, stdevGaussian):
@@ -129,12 +76,6 @@ def computePairwiseAffinities(data, stdevGaussian):
     for i in range(numSamples):
         for j in range(numSamples):
             toReturn[i,j] = toReturn[i,j] / row_sums[i]
-
-#     row_totals = np.zeros(range(numSamples))
-#     for i in range(len(row_totals)):
-#         for k in range(numSamples):
-#             if(i != k):
-#                 total += math.exp( pairWiseDistances[i,k] / (2 * stdevGaussian**2) )
             
     return toReturn
 
@@ -168,7 +109,7 @@ def symmetrisizePairWiseAffinities(data):
     return toReturn
 
 
-# In[6]:
+# In[11]:
 
 
 def computeLowDimAffinities(lowDimData):
@@ -230,20 +171,7 @@ def calcKLDivergence(q, p):
     
 
 
-# In[7]:
-
-
-# q = symmetrisizePairWiseAffinities(computePairwiseAffinities(data,10))
-# print("perplexity" + str(getPerplexity(computePairwiseAffinities(data,10))))
-# lowDimData = twodto2dtSNE(8, colors)
-# print(lowDimData)
-# p = computeLowDimAffinities(lowDimData)
-# computeGradientforIthPoint(q,p,lowDimData,0)
-
-#doTIterations(q,p,lowDimData,2)
-
-
-# In[8]:
+# In[12]:
 
 
 def do1UpdatesOnIth(q, p, lowDimData, indx):
@@ -280,7 +208,7 @@ def doTIterations(q, p, lowDimData, T):
     return newData
 
 
-# In[9]:
+# In[13]:
 
 
 def runTSNE(data, colors, stdev, iterations):
@@ -297,83 +225,6 @@ def runTSNE(data, colors, stdev, iterations):
     plt.show()
     return q,p,updatedLine, plotRandom
     
-
-
-# In[10]:
-
-
-q,p,updatedLine, onNumberLineRandom = runTSNE(data, colors, 8, 200)
-print(updatedLine)
-
-
-# In[11]:
-
-
-print(calcKLDivergence(computeLowDimAffinities(np.array(updatedLine)),p))
-
-
-# In[12]:
-
-
-computeGradientforIthPoint(q,p,updatedLine,7)
-
-
-# In[13]:
-
-
-computeGradientforIthPoint(q,p,updatedLine,4)
-
-
-# In[ ]:
-
-
-# Set the number of clusters and the number of points per cluster
-num_clusters = 4
-points_per_cluster = 4
-
-# Set the dimensionality of each data point
-dimensionality = 5
-
-# Set the random seed for reproducibility
-np.random.seed(42)
-
-# Generate random cluster centroids
-centroids = 10*np.random.randn(num_clusters, dimensionality)
-print(centroids)
-
-print()
-randArr = np.random.randn(points_per_cluster, dimensionality)
-print(randArr)
-
-print(centroids[0] + randArr)
-    
-
-# Generate data points around each centroid
-data = []
-for centroid in centroids:
-    cluster_points = centroid + np.random.randn(points_per_cluster, dimensionality)
-    
-    data.extend(cluster_points)
-
-# Convert the data list to a NumPy array
-data_matrix = np.array(data)
-
-print(data_matrix)
-
-
-# In[ ]:
-
-
-print(data_matrix.shape[0])
-
-
-# In[ ]:
-
-
-#colors = ["red"]*4 + ["blue"]*4 + ["green"]*4 + ["orange"]*4
-print(colors)
-q,p,updatedLine, onNumberLineRandom = runTSNE(data_matrix, colors, 15, 200)
-print(updatedLine)
 
 
 # In[ ]:
