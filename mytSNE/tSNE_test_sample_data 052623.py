@@ -38,17 +38,13 @@ mytSNE_052623.runTSNE(data, colors, 8, 200)
 print()
 
 
-# In[5]:
+# In[10]:
 
 
-# Set the number of clusters and the number of points per cluster
 num_clusters = 4
 points_per_cluster = 4
-
-# Set the dimensionality of each data point
 dimensionality = 5
 
-# Set the random seed for reproducibility
 np.random.seed(1)
 
 # Generate random cluster centroids
@@ -62,7 +58,7 @@ print(randArr)
 print(centroids[0] + randArr)
     
 
-# Generate data points around each centroid
+#make data around each center
 data = []
 for centroid in centroids:
     cluster_points = centroid + np.random.randn(points_per_cluster, dimensionality)
@@ -75,7 +71,7 @@ data_matrix = np.array(data)
 print(data_matrix)
 
 
-# In[7]:
+# In[9]:
 
 
 colors = ["red"]*4 + ["blue"]*4 + ["green"]*4 + ["orange"]*4
