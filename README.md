@@ -1,5 +1,5 @@
 # CSE185_tSNE Description
-My name is Siddharth Gaywala and this is my version of the ReadMe made for the CSE185 T-SNE project proposal. I currently have some base code and some example data to test it on.
+My name is Siddharth Gaywala and this is my version of the ReadMe made for the CSE185 T-SNE project proposal. T-SNE is a way to visualize high dimensional data in lower dimensions. In the algorithm presented, high dimensional data can be visualized in two dimensions. I currently have some base code and some example data to test it on.
 
 Base code for the tSNE algorithm can be found in mytSNE/mytSNE_052623.py. My sample data can be found in mytSNE/tSNE_test_sample_data 052623.py.
 
