@@ -12,6 +12,7 @@ Parameters are as follows:
 
 ## Sample Code on a Simple Example
 Here is sample code:
+This data consists of 3 clusters in 2 dimensions.
 ```
 data = np.array([[1, 1],
                  [2, 2],
