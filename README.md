@@ -1,4 +1,4 @@
-# CSE185_tSNE
+# CSE185_tSNE Description
 My name is Siddharth Gaywala and this is my version of the ReadMe made for the CSE185 T-SNE project proposal. I currently have some base code and some example data to test it on.
 
 Base code for the tSNE algorithm can be found in mytSNE/mytSNE_052623.py. My sample data can be found in mytSNE/tSNE_test_sample_data 052623.py.
@@ -10,6 +10,7 @@ Parameters are as follows:
 3. stdev: represents a standard deviation number to calculate perplexities. My code will output a list of perplexities for that given standard deviation number. To increase the perplexity, increase the standard deviation number inputted.
 4. iterations: The number of iterations for myTSNE to run through.
 
+## Sample Code on a Simple Example
 Here is sample code:
 ```
 data = np.array([[1, 1],
@@ -40,3 +41,15 @@ The first line represents the calculated perplexities. The next line (the first 
 
 The first and second output of the function is q and p (conditional probabilities of the ith data points if they would be neighbors with the jth datapoint for the low and high dimensional datasets respectively). The third and fourth outputs are the updated points after the algorithm and the initial set of points by the algorithm respectively.
 
+## Sample Code on a More Complex Example
+
+The data inputted consists of 5 dimensional data made of 4 clusters. ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/2f82a678-bd6c-4cc3-b86e-0c3147b68665)
+
+I ran the following commands:
+```
+colors = ["red"]*4 + ["blue"]*4 + ["green"]*4 + ["orange"]*4
+mytSNE_052623.runTSNE(data_matrix, colors, 15, 200)
+```
+
+The output of myTSNE looks like this:
+![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/9330bdf5-a176-4b9e-a1bc-3a366a4bad2b)
