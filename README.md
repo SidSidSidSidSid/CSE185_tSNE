@@ -72,4 +72,7 @@ mytSNE_052623.runTSNE(data_matrix, colors, 15, 200)
 ```
 
 The output of myTSNE looks like this:
-![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/9330bdf5-a176-4b9e-a1bc-3a366a4bad2b)
+![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/4567358d-47be-4c1d-8e83-3254295a03f8)
+
+Where the first line is the perplexities, the first graph is the initial distribution of points, and the last graph is the distribution of points after iterations of TSNE.
+
