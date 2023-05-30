@@ -25,6 +25,7 @@ Output is a numpy data matrix of the low dimensional data with rows representing
 Here is sample code:
 This data consists of 3 clusters in 2 dimensions.
 ```
+import numpy as np
 data = np.array([[1, 1],
                  [2, 2],
                  [1.5, 1.5],
