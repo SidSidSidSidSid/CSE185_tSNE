@@ -1,14 +1,23 @@
 # CSE185_tSNE Description
 My name is Siddharth Gaywala and this is my version of the ReadMe made for the CSE185 T-SNE project proposal. T-SNE is a way to visualize high dimensional data in lower dimensions. In the algorithm presented, high dimensional data can be visualized in two dimensions. I currently have some base code and some example data to test it on.
 
-Base code for the tSNE algorithm can be found in mytSNE/mytSNE_052623.py. My sample data can be found in mytSNE/tSNE_test_sample_data 052623.py.
+Base code for the tSNE algorithm can be found in mytSNE/mytSNE_052923.py. My sample data can be found in mytSNE/tSNE_sample_data 052923.py.
 
-To run my tSNE algorithm in the mytSNE_052623.py file, call the runTSNE() method, which takes in 4 parameters and has 4 outputs.
+## Installation Instructions
+To install my tSNE algorithm, place the mytSNE_052923.py in the same folder as your other python file. Then, run the following command:
+```
+import mytSNE_052923
+```
+
+To run my tSNE algorithm in the mytSNE_052623.py file, call the mytSNE_052923.runTSNE() method, which takes in 5 parameters and has 1 output.
 Parameters are as follows:
 1. data: a 2d numpy array where rows represent each sample and columns represents observations for that sample.
 2. colors: a list with length of the number of rows in data that represent matplotlib colors to plot the data.
-3. stdev: represents a standard deviation number to calculate perplexities. My code will output a list of perplexities for that given standard deviation number. To increase the perplexity, increase the standard deviation number inputted.
-4. iterations: The number of iterations for myTSNE to run through.
+3. perplexity: the expected number of neighbors each data point is expected to have. Usually, this is between 5 and 50.
+4. iterations: The number of iterations for myTSNE to run through. 
+5. numPCs: The number of PCs to calculate beforehand if necessary to speed up computation. If left blank, the default is 0. If 0 is inputted, PCs are not calculated. Usually, this is between 10 and 50.
+
+Output is a numpy data matrix of the low dimensional data with rows representing each sample, and the 2 columns representing x and y values of the low dimensional data.
 
 ## Sample Code on a Simple Example
 Here is sample code:
