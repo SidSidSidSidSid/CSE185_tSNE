@@ -3,7 +3,7 @@ My name is Siddharth Gaywala and this is my version of the ReadMe made for the C
 
 Base code for the tSNE algorithm can be found in mytSNE/mytSNE_052923.py. My sample data can be found in mytSNE/tSNE_sample_data 052923.py.
 
-This tSNE algorithm works by plotting all points randomely onto a 2D graph. Pairwise probabilities that the ith point would pick the jth point as its neighbor are calculated for the low dimensional data and the high dimensional data. Then, points are moved one-by-one in the direction to minimize the difference between the distribution of pairwise probabilities between the low dimensional and high dimensional data (using a cost function using gradient descent).
+This tSNE algorithm works by plotting all points randomely onto a 2D graph. Pairwise probabilities that the ith point would pick the jth point as its neighbor are calculated for the low dimensional data and the high dimensional data. Then, points are moved one-by-one in the direction to minimize the difference between the pairwise probabilities between the low dimensional and high dimensional data (using a cost function using gradient descent).
 
 ## Installation Instructions
 To install my tSNE algorithm, place the mytSNE_052923.py in the same folder as your other python file. Then, run the following command:
