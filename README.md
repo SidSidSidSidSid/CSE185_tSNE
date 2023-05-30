@@ -41,15 +41,15 @@ colors = np.array(["orange", "orange","orange","orange", "blue", "blue","blue","
 This data looks like if plotted on a 2d scale:
 ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/5c31c69a-d129-4b67-9183-9758c0923bb4)
 
-Then, you can run the following command to run myTSNE on this data with a standard deviation of 8 and 200 iterations.
+Then, you can run the following command to run myTSNE on this data with a perplexity of 3 and 30 iterations.
 ```
-q,p,updatedPoints, initialPoints = mytSNE_052623.runTSNE(data, colors, 8, 200)
+lowDimData = mytSNE_052923.runTSNE(data, colors, 3, 30)
 ```
 This is the output:
 The first line represents the calculated perplexities. The next line (the first graph) is the initial distribution of points made by myTSNE. The last line is the tSNE algorithm plotted after all iterations.
-![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/cf76f8e3-ddff-42e3-98a2-7d02f5f8fc4a)
+![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/03d2cfbc-02eb-4249-8eaf-0e21cc6441ea)
 
-The first and second output of the function is q and p (conditional probabilities of the ith data points if they would be neighbors with the jth datapoint for the low and high dimensional datasets respectively). The third and fourth outputs are the updated points after the algorithm and the initial set of points by the algorithm respectively.
+![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/d74e1fd0-f894-447d-b542-201d355dbd64)
 
 ## Sample Code on a More Complex Example
 
@@ -77,11 +77,11 @@ The data inputted consists of 5 dimensional data made of 4 clusters.
 I ran the following commands:
 ```
 colors = ["red"]*4 + ["blue"]*4 + ["green"]*4 + ["orange"]*4
-mytSNE_052623.runTSNE(data_matrix, colors, 15, 200)
+lowDimData = mytSNE_052923.runTSNE(data_matrix, colors, perplexity=3, iterations=75, numPCs = 0)
 ```
 
 The output of myTSNE looks like this:
-![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/4567358d-47be-4c1d-8e83-3254295a03f8)
+![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/4f4a1649-1b47-45e7-ba48-e47cb2c6f9c3)
 
-Where the first line is the perplexities, the first graph is the initial distribution of points, and the last graph is the distribution of points after iterations of TSNE.
+![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/70341260-26a5-4b22-9b3d-158d8e175a2e)
 
