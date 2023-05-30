@@ -57,7 +57,7 @@ This is the output:
 
 The data inputted consists of 5 dimensional data made of 4 clusters.
 ```
-#data is as follows
+#data_matrix is as follows
 [[ 16.05161808  -7.0051931   -6.02887582  -9.03723162   8.70488405]
  [ 15.60645799  -5.92664865  -3.18146239 -10.60952727   9.2712794 ]
  [ 16.54362396  -6.46981398  -6.42423572 -11.07902894   8.44518206]
