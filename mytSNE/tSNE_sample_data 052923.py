@@ -6,8 +6,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-import math
-import mytSNE_052623
+import mytSNE_052923
 
 
 # In[2]:
@@ -31,16 +30,17 @@ plt.scatter(data[:,0], data[:,1], c=colors)
 plt.show()
 
 
-# In[4]:
+# In[3]:
 
 
-mytSNE_052623.runTSNE(data, colors, 8, 200)
+mytSNE_052923.runTSNE(data, colors, 3, 30)
 print()
 
 
-# In[10]:
+# In[5]:
 
 
+#generate data and run
 num_clusters = 4
 points_per_cluster = 4
 dimensionality = 5
@@ -49,19 +49,16 @@ np.random.seed(1)
 
 # Generate random cluster centroids
 centroids = 10*np.random.randn(num_clusters, dimensionality)
-print(centroids)
 
-print()
 randArr = np.random.randn(points_per_cluster, dimensionality)
-print(randArr)
 
-print(centroids[0] + randArr)
+# print(centroids[0] + randArr)
     
 
 #make data around each center
 data = []
 for centroid in centroids:
-    cluster_points = centroid + np.random.randn(points_per_cluster, dimensionality)
+    cluster_points = centroid + 3*np.random.randn(points_per_cluster, dimensionality)
     
     data.extend(cluster_points)
 
@@ -69,13 +66,15 @@ for centroid in centroids:
 data_matrix = np.array(data)
 
 print(data_matrix)
-
-
-# In[9]:
-
-
+print()
+print()
 colors = ["red"]*4 + ["blue"]*4 + ["green"]*4 + ["orange"]*4
-mytSNE_052623.runTSNE(data_matrix, colors, 15, 200)
+
+
+# In[7]:
+
+
+lowDimData = mytSNE_052923.runTSNE(data_matrix, colors, perplexity=3, iterations=75, numPCs = 0)
 print()
 
 
