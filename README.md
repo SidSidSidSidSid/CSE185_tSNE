@@ -58,6 +58,7 @@ This is the output:
 
 The data inputted consists of 5 dimensional data made of 4 clusters.
 ```
+import numpy as np
 #data_matrix is as follows
 data_matrix2 = np.array([[ 15.66794698,  -8.78045103,  -7.5231924 ,  -5.65232242, 8.80649956],
        [ 14.3324667 ,  -5.54481768,   1.01904789, -10.36920936, 10.50568562],
