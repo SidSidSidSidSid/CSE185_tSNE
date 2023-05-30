@@ -40,7 +40,7 @@ data = np.array([[1, 1],
 colors = np.array(["orange", "orange","orange","orange", "blue", "blue","blue","blue","red","red","red","red",])
 ```
 
-This data looks like if plotted on a 2d scale:
+If plotted on a 2d scale, this data looks like:
 ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/5c31c69a-d129-4b67-9183-9758c0923bb4)
 
 Then, you can run the following command to run myTSNE on this data with a perplexity of 3 and 30 iterations.
