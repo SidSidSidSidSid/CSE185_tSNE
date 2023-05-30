@@ -11,7 +11,7 @@ To install my tSNE algorithm, place the mytSNE_052923.py in the same folder as y
 import mytSNE_052923
 ```
 
-To run my tSNE algorithm in the mytSNE_052623.py file, call the mytSNE_052923.runTSNE() method, which takes in 5 parameters and has 1 output.
+To run my tSNE algorithm in the mytSNE_052923.py file, call the mytSNE_052923.runTSNE() method, which takes in 5 parameters and has 1 output.
 Parameters are as follows:
 1. data: a 2d numpy array where rows represent each sample and columns represents observations for that sample.
 2. colors: a list with length of the number of rows in data that represent matplotlib colors to plot the data.
