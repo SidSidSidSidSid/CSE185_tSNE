@@ -49,6 +49,7 @@ Then, you can run the following command to run myTSNE on this data with a perple
 lowDimData = mytSNE_052923.runTSNE(data, colors, 3, 30)
 ```
 This is the output:
+
 ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/03d2cfbc-02eb-4249-8eaf-0e21cc6441ea)
 
 ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/d74e1fd0-f894-447d-b542-201d355dbd64)
@@ -83,6 +84,7 @@ lowDimData = mytSNE_052923.runTSNE(data_matrix, colors, perplexity=3, iterations
 ```
 
 The output of myTSNE looks like this:
+
 ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/4f4a1649-1b47-45e7-ba48-e47cb2c6f9c3)
 
 ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/70341260-26a5-4b22-9b3d-158d8e175a2e)
