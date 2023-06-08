@@ -150,4 +150,4 @@ colorsFCN1_severe = mytSNE.colorByGene(severeHighDimData, severeLowDimData, "FCN
 | SPP1   | ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/ef39cdec-d1cf-4d51-a1de-29bfa4779739)        | ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/3b24ce95-0f55-4879-bd18-3cefd7a51118) |
 | FCN1   | ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/7566742b-4029-4ee4-b397-dfcf51c16ea5)        | ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/2ce94888-f9a3-4b35-bbb2-342c0f836bc0) |
 
-
+This matches several of the paper findings, where macrophage clusters tended to be enriched for SPP1 and FCN1 in patients with severe COVID and macrophage clusters tended to be enriched for FABP4 in healthy control patients.
