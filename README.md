@@ -127,8 +127,9 @@ controlLowDimData = mytSNE.runTSNE(np.array(adata_control.X.todense()), perplexi
 severeLowDimData = mytSNE.runTSNE(np.array(adata_severe.X.todense()), perplexity=25, iterations=1000, numPCs = 10)
 ```
 Then, I generated the appropriate graphs coloring by CD68 (marker for macrophages), FABP4, SPP1, and FCN1.
-### Control Results:
-| Header      | Title       |
-| Paragraph   | Text        |
-
-### Severe Results:
+| Marker      | Healthy Control | Patient with Severe COVID-19 |
+| ----------- | ----------- | -----|
+| CD68      | ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/22f1d448-934f-4121-95d5-ed3f77d6346b)       | ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/3d63b905-80b0-49b3-93ca-2b4d9dfafb0c) |
+| FABP4   | ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/4fdd5d10-37a2-4c07-9f1e-e23d197384c2)        | ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/fb56d1ab-e1d8-4ca3-ba3f-c5a21a61ce10) |
+| SPP1   | ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/ef39cdec-d1cf-4d51-a1de-29bfa4779739)        | ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/3b24ce95-0f55-4879-bd18-3cefd7a51118) |
+| FCN1   | ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/7566742b-4029-4ee4-b397-dfcf51c16ea5)        | ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/2ce94888-f9a3-4b35-bbb2-342c0f836bc0) |
