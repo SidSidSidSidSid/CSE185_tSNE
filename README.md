@@ -14,10 +14,10 @@ import mytSNE_052923
 To run my tSNE algorithm in the mytSNE_052923.py file, call the mytSNE_052923.runTSNE() method, which takes in 5 parameters and has 1 output.
 Parameters are as follows:
 1. data: a 2d numpy array where rows represent each sample and columns represents observations for that sample.
-2. colors: a list with length of the number of rows in data that represent matplotlib colors to plot the data.
-3. perplexity: the expected number of neighbors each data point is expected to have. Usually, this is between 5 and 50.
-4. iterations: The number of iterations for myTSNE to run through. 
-5. numPCs: The number of PCs to calculate beforehand if necessary to speed up computation. If left blank, the default is 0. If 0 is inputted, PCs are not calculated. Usually, this is between 10 and 50.
+2. perplexity: the expected number of neighbors each data point is expected to have. Usually, this is between 5 and 50.
+3. iterations: The number of iterations for myTSNE to run through. 
+4. numPCs: The number of PCs to calculate beforehand if necessary to speed up computation. If left blank, the default is 0. If 0 is inputted, PCs are not calculated. Usually, this is between 10 and 50.
+5. colors: a list with length of the number of rows in data that represent matplotlib colors to plot the data. If left blank, the default is None. If None is inputted, colors of all points will be gray.
 
 Output is a numpy data matrix of the low dimensional data with rows representing each sample, and the 2 columns representing x and y values of the low dimensional data.
 
@@ -46,7 +46,7 @@ If plotted on a 2d scale, this data looks like:
 
 Then, you can run the following command to run myTSNE on this data with a perplexity of 3 and 30 iterations.
 ```
-lowDimData = mytSNE_052923.runTSNE(data, colors, 3, 30)
+lowDimData = mytSNE_052923.runTSNE(data, 3, 30, 0, colors)
 ```
 This is the output:
 
@@ -81,7 +81,7 @@ colors = ["red"]*4 + ["blue"]*4 + ["green"]*4 + ["orange"]*4
 
 Then, I ran the following commands:
 ```
-lowDimData = mytSNE_052923.runTSNE(data_matrix, colors, perplexity=3, iterations=75, numPCs = 0)
+lowDimData = mytSNE_052923.runTSNE(data_matrix, perplexity=3, iterations=75, numPCs = 0, colors
 ```
 
 The output of myTSNE looks like this:
@@ -90,3 +90,31 @@ The output of myTSNE looks like this:
 
 ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/70341260-26a5-4b22-9b3d-158d8e175a2e)
 
+
+## Running on scRNA-seq Data
+Steps:
+1. Generate an anndata variable and perform filtering for genes and cells. (For this algorithm, a max of 300 cells is recommended).
+```
+import anndata as ad
+#generate an anndata variable called adata_var and perform filtering on it
+```
+2. Run the tSNE algorithm
+```
+import SG_tSNE as mytSNE
+import numpy as np
+highDimData = np.array(adata_var.X.todense())
+lowDimData= mytSNE.runTSNE(highDimData, perplexity, iterations, numPCs)
+```
+3. Color by Gene (if necessary)
+The function mytSNE.colorByGene() takes in 4 parameters and outputs the list of colors as well as a matplotlib plot of the tSNE data colored by those colors.
+The 4 parameters are:
+- highDimData: high dimensional data
+- lowDimData: low dimensional data generated after running mytSNE
+- geneName: name of the gene you want to color by
+- annDataGeneNames: gene names of the genes
+```
+colors = mytSNE.colorByGene(highDimData, lowDimData, "{marker name}", adata_var.var_names)
+```
+
+## Sample Code on scRNA-seq Data
+This is a dataset taken from lung fluid from covid patients, etc.
