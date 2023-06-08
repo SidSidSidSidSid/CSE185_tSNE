@@ -93,7 +93,7 @@ The output of myTSNE looks like this:
 
 ## Running on scRNA-seq Data
 Steps:
-1. Generate an anndata variable and perform filtering for genes and cells. (For this algorithm, a max of 300 cells is recommended).
+1. Generate an anndata variable and perform filtering for genes and cells. (For this algorithm, a max of 300 cells is recommended for faster computation).
 ```
 import anndata as ad
 #generate an anndata variable called adata_var and perform filtering on it
@@ -117,4 +117,18 @@ colors = mytSNE.colorByGene(highDimData, lowDimData, "{marker name}", adata_var.
 ```
 
 ## Sample Code on scRNA-seq Data
-This is a dataset taken from lung fluid from covid patients, etc.
+This is a dataset taken from [this paper](https://www.nature.com/articles/s41591-020-0901-9). Fluid was collected from lungs of patients with COVID-19 and controls and scRNA-seq was performed on that fluid.
+
+```
+# load data into an anndata variable called adata_control for a control sample and adata_severe for a COVID-patient sample
+# adata_control consisted of 544 cells & 503 genes
+# adata_severe consisted of 319 cells & 504 genes
+controlLowDimData = mytSNE.runTSNE(np.array(adata_control.X.todense()), perplexity=25, iterations=1000, numPCs = 10)
+severeLowDimData = mytSNE.runTSNE(np.array(adata_severe.X.todense()), perplexity=25, iterations=1000, numPCs = 10)
+```
+Then, I generated the appropriate graphs coloring by CD68 (marker for macrophages), FABP4, SPP1, and FCN1.
+### Control Results:
+| Header      | Title       |
+| Paragraph   | Text        |
+
+### Severe Results:
