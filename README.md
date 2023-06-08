@@ -123,13 +123,31 @@ This is a dataset taken from [this paper](https://www.nature.com/articles/s41591
 # load data into an anndata variable called adata_control for a control sample and adata_severe for a COVID-patient sample
 # adata_control consisted of 544 cells & 503 genes
 # adata_severe consisted of 319 cells & 504 genes
+controlHighDimData = np.array(adata_control.X.todense())
+severeHighDimData = np.array(adata_severe.X.todense())
+
 controlLowDimData = mytSNE.runTSNE(np.array(adata_control.X.todense()), perplexity=25, iterations=1000, numPCs = 10)
 severeLowDimData = mytSNE.runTSNE(np.array(adata_severe.X.todense()), perplexity=25, iterations=1000, numPCs = 10)
 ```
 Then, I generated the appropriate graphs coloring by CD68 (marker for macrophages), FABP4, SPP1, and FCN1.
+```
+colorsCD68_control = mytSNE.colorByGene(controlHighDimData, controlLowDimData, "CD68", adata1_var.var_names)
+colorsFABP4_control = mytSNE.colorByGene(controlHighDimData, controlLowDimData, "FABP4", adata1_var.var_names)
+colorsSPP1_control = mytSNE.colorByGene(controlHighDimData, controlLowDimData, "SPP1", adata1_var.var_names)
+colorsFCN1_control = mytSNE.colorByGene(controlHighDimData, controlLowDimData, "FCN1", adata1_var.var_names)
+
+colorsCD68_severe = mytSNE.colorByGene(severeHighDimData, severeLowDimData, "CD68", adata1_var.var_names)
+colorsFABP4_severe = mytSNE.colorByGene(severeHighDimData, severeLowDimData, "FABP4", adata1_var.var_names)
+colorsSPP1_severe = mytSNE.colorByGene(severeHighDimData, severeLowDimData, "SPP1", adata1_var.var_names)
+colorsFCN1_severe = mytSNE.colorByGene(severeHighDimData, severeLowDimData, "FCN1", adata1_var.var_names)
+```
+
+
 | Marker      | Healthy Control | Patient with Severe COVID-19 |
 | ----------- | ----------- | -----|
 | CD68      | ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/22f1d448-934f-4121-95d5-ed3f77d6346b)       | ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/3d63b905-80b0-49b3-93ca-2b4d9dfafb0c) |
 | FABP4   | ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/4fdd5d10-37a2-4c07-9f1e-e23d197384c2)        | ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/fb56d1ab-e1d8-4ca3-ba3f-c5a21a61ce10) |
 | SPP1   | ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/ef39cdec-d1cf-4d51-a1de-29bfa4779739)        | ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/3b24ce95-0f55-4879-bd18-3cefd7a51118) |
 | FCN1   | ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/7566742b-4029-4ee4-b397-dfcf51c16ea5)        | ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/2ce94888-f9a3-4b35-bbb2-342c0f836bc0) |
+
+
