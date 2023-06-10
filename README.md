@@ -101,7 +101,7 @@ import anndata as ad
 ```
 2. Run the tSNE algorithm
 ```
-import SG_tSNE as mytSNE
+import mytSNE_060823 as mytSNE
 import numpy as np
 highDimData = np.array(adata_var.X.todense())
 lowDimData= mytSNE.runTSNE(highDimData, perplexity, iterations, numPCs)
