@@ -45,9 +45,9 @@ If plotted on a 2d scale, this data looks like:
 ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/ccda8a2f-d5ef-4a77-9a98-eb37aff5e8e3)
 
 
-Then, you can run the following command to run myTSNE on this data with a perplexity of 3 and 30 iterations.
+Then, you can run the following command to run myTSNE on this data with a perplexity of 8 and 30 iterations.
 ```
-lowDimData = mytSNE.runTSNE(data, 3, 30, 0, colors)
+lowDimData = mytSNE.runTSNE(data, 8, 30, 0, colors)
 ```
 This is the output:
 
