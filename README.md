@@ -38,7 +38,7 @@ data = np.array([[1, 1],
                  [7, 6],
                  [6.5, 6.5],
                  [6.7, 6.25]])
-colors = np.array(["orange", "orange","orange","orange", "blue", "blue","blue","blue","red","red","red","red",])
+colors = np.array(["forestgreen", "limegreen","darkgreen","lime", "navy", "slateblue","lavender","royalblue","maroon","tomato","salmon","lightcoral",])
 ```
 
 If plotted on a 2d scale, this data looks like:
