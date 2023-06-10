@@ -42,7 +42,8 @@ colors = np.array(["orange", "orange","orange","orange", "blue", "blue","blue","
 ```
 
 If plotted on a 2d scale, this data looks like:
-![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/5c31c69a-d129-4b67-9183-9758c0923bb4)
+![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/ccda8a2f-d5ef-4a77-9a98-eb37aff5e8e3)
+
 
 Then, you can run the following command to run myTSNE on this data with a perplexity of 3 and 30 iterations.
 ```
@@ -50,9 +51,9 @@ lowDimData = mytSNE.runTSNE(data, 3, 30, 0, colors)
 ```
 This is the output:
 
-![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/03d2cfbc-02eb-4249-8eaf-0e21cc6441ea)
+![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/add7cd19-a879-4fb0-ab44-8c1d306a2731)
 
-![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/d74e1fd0-f894-447d-b542-201d355dbd64)
+![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/7b31b776-976a-4bba-84be-f26c965a6580)
 
 ## Sample Code on a More Complex Example
 
