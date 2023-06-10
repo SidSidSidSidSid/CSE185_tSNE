@@ -1,5 +1,5 @@
 # CSE185_tSNE Description
-My name is Siddharth Gaywala and this is my version of the ReadMe made for the CSE185 T-SNE project proposal. T-SNE is a way to visualize high dimensional data in lower dimensions. In the algorithm presented, high dimensional data can be visualized in two dimensions. I currently have some base code and some example data to test it on.
+My name is Siddharth Gaywala and this is my version of the ReadMe made for the CSE185 T-SNE project proposal. T-SNE is a way to visualize high dimensional data in lower dimensions. In the algorithm presented, high dimensional data can be visualized in two dimensions. I currently have some base code and some example data to test it on. The algorithm described is based on the algorithm from [this paper](https://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf).
 
 Base code for the tSNE algorithm can be found in mytSNE/mytSNE_060823.py. My sample data can be found in mytSNE/tSNE_sample_data_060823.py.
 
@@ -118,12 +118,12 @@ colors = mytSNE.colorByGene(highDimData, lowDimData, "{marker name}", adata_var.
 ```
 
 ## Sample Code on scRNA-seq Data
-This is a dataset taken from [this paper](https://www.nature.com/articles/s41591-020-0901-9). Fluid was collected from lungs of patients with COVID-19 and controls and scRNA-seq was performed on that fluid.
+This is a dataset taken from [this paper](https://www.nature.com/articles/s41591-020-0901-9). Fluid was collected from lungs of patients with severe and mild COVID-19 and scRNA-seq was performed on that fluid.
 
 ```
 # load data into an anndata variable called adata_control for a control sample and adata_severe for a COVID-patient sample
-# adata_control consisted of 544 cells & 503 genes
-# adata_severe consisted of 319 cells & 504 genes
+# adata_control consisted of 544 cells & 503 genes (GEO accession number GSE145926, sample GSM4339769_C141))
+# adata_severe consisted of 319 cells & 504 genes (GEO accession number GSE145926, sample GSM4339773_C145)
 controlHighDimData = np.array(adata_control.X.todense())
 severeHighDimData = np.array(adata_severe.X.todense())
 
@@ -144,7 +144,7 @@ colorsFCN1_severe = mytSNE.colorByGene(severeHighDimData, severeLowDimData, "FCN
 ```
 
 
-| Marker      | Healthy Control | Patient with Severe COVID-19 |
+| Marker      | Patient with Mild COVID-19 | Patient with Severe COVID-19 |
 | ----------- | ----------- | -----|
 | CD68      | ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/22f1d448-934f-4121-95d5-ed3f77d6346b)       | ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/3d63b905-80b0-49b3-93ca-2b4d9dfafb0c) |
 | FABP4   | ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/4fdd5d10-37a2-4c07-9f1e-e23d197384c2)        | ![image](https://github.com/Siddharth-Gaywala/CSE185_tSNE/assets/38893705/fb56d1ab-e1d8-4ca3-ba3f-c5a21a61ce10) |
