@@ -1,17 +1,17 @@
 # CSE185_tSNE Description
 My name is Siddharth Gaywala and this is my version of the ReadMe made for the CSE185 T-SNE project proposal. T-SNE is a way to visualize high dimensional data in lower dimensions. In the algorithm presented, high dimensional data can be visualized in two dimensions. I currently have some base code and some example data to test it on.
 
-Base code for the tSNE algorithm can be found in mytSNE/mytSNE_052923.py. My sample data can be found in mytSNE/tSNE_sample_data 052923.py.
+Base code for the tSNE algorithm can be found in mytSNE/mytSNE_060823.py. My sample data can be found in mytSNE/tSNE_sample_data_060823.py.
 
 This tSNE algorithm works by plotting all points randomely onto a 2D graph. Pairwise probabilities that the ith point would pick the jth point as its neighbor are calculated for the low dimensional data and the high dimensional data. Then, points are moved one-by-one in the direction to minimize the difference between the pairwise probabilities between the low dimensional and high dimensional data (using a cost function using gradient descent).
 
 ## Installation Instructions
-To install my tSNE algorithm, place the mytSNE_052923.py in the same folder as your other python file. Then, run the following command in python:
+To install my tSNE algorithm, place the mytSNE_060823.py in the same folder as your other python file. Then, run the following command in python:
 ```
-import mytSNE_052923
+import mytSNE_060823 as mytSNE
 ```
 
-To run my tSNE algorithm in the mytSNE_052923.py file, call the mytSNE_052923.runTSNE() method, which takes in 5 parameters and has 1 output.
+To run my tSNE algorithm in the mytSNE_060823.py file, call the mytSNE_060823.runTSNE() method, which takes in 5 parameters and has 1 output.
 Parameters are as follows:
 1. data: a 2d numpy array where rows represent each sample and columns represents observations for that sample.
 2. perplexity: the expected number of neighbors each data point is expected to have. Usually, this is between 5 and 50.
@@ -46,7 +46,7 @@ If plotted on a 2d scale, this data looks like:
 
 Then, you can run the following command to run myTSNE on this data with a perplexity of 3 and 30 iterations.
 ```
-lowDimData = mytSNE_052923.runTSNE(data, 3, 30, 0, colors)
+lowDimData = mytSNE.runTSNE(data, 3, 30, 0, colors)
 ```
 This is the output:
 
@@ -81,7 +81,7 @@ colors = ["red"]*4 + ["blue"]*4 + ["green"]*4 + ["orange"]*4
 
 Then, I ran the following commands:
 ```
-lowDimData = mytSNE_052923.runTSNE(data_matrix, perplexity=3, iterations=75, numPCs = 0, colors
+lowDimData = mytSNE.runTSNE(data_matrix, perplexity=3, iterations=75, numPCs = 0, colors
 ```
 
 The output of myTSNE looks like this:
