@@ -121,7 +121,7 @@ colors = mytSNE.colorByGene(highDimData, lowDimData, "{marker name}", adata_var.
 This is a dataset taken from [this paper](https://www.nature.com/articles/s41591-020-0901-9). Fluid was collected from lungs of patients with severe and mild COVID-19 and scRNA-seq was performed on that fluid.
 
 ```
-# load data into an anndata variable called adata_control for a control sample and adata_severe for a COVID-patient sample
+# load data into an anndata variable called adata_control for a mild COVID-19 sample and adata_severe for a severe COVID-19 sample
 # adata_control consisted of 544 cells & 503 genes (GEO accession number GSE145926, sample GSM4339769_C141))
 # adata_severe consisted of 319 cells & 504 genes (GEO accession number GSE145926, sample GSM4339773_C145)
 controlHighDimData = np.array(adata_control.X.todense())
